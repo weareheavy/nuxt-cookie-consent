@@ -2,7 +2,7 @@
   "name": "@weareheavy/nuxt-cookie-consent",
   "version": "1.0.0",
   "description": "Nuxt module for integrating with cookie consent providers with ease",
-  "repository": "heavyy/nuxt-cookie-consent",
+  "repository": "weareheavy/nuxt-cookie-consent",
   "license": "MIT",
   "type": "module",
   "private": false,

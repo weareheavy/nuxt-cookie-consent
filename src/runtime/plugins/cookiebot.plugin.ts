@@ -26,6 +26,12 @@ export default defineNuxtPlugin(() => {
         'Unable to initialize CookieBot script: No Cookiebot CBID provided. Please set the `cbid` option in "cookieConsent" in `nuxt.config.js`',
       )
     } else {
+      // @ts-ignore
+      const consentMode = config.consentMode
+
+      // @ts-ignore
+      const consentModeDefaults = config.consentModeDefaults
+
       useHead({
         script: [
           {
@@ -33,6 +39,11 @@ export default defineNuxtPlugin(() => {
             src: `https://consent.cookiebot.com/uc.js?cbid=${cbid}`,
             async: true,
             type: 'text/javascript',
+            tagPriority: 5,
+            'data-consentmode': !consentMode ? 'disabled' : undefined,
+            'data-consentmode-defaults': !consentModeDefaults
+              ? 'disabled'
+              : undefined,
           },
         ],
       })
@@ -53,7 +64,7 @@ export default defineNuxtPlugin(() => {
     },
   })
 
-  const state = useCookieConsent()
+  const { state } = useCookieConsent()
 
   if (cookie.value) {
     updateState(state, {

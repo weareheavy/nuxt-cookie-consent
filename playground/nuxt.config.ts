@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   cookieConsent: {
     provider: 'cookieinformation',
     // cbid: '00000000-0000-0000-0000-000000000000',
-    culture: 'EN',
     dev: true,
     scripts: {
       necessary: [

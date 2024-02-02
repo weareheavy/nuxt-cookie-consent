@@ -1,10 +1,11 @@
 <template>
   <div>
-    <pre>{{ consent }}</pre>
+    <pre>{{ state }}</pre>
     <LazyNuxtCookieConsentPolicy />
+    <button @click="show">Show modal</button>
   </div>
 </template>
 
 <script setup lang="ts">
-const consent = useCookieConsent()
+const { state, show } = useCookieConsent()
 </script>

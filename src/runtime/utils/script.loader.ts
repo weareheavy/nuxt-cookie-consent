@@ -8,13 +8,13 @@ import type {
 import { useCookieConsent } from '../composables/useCookieConsent'
 
 export function loadScripts(config: NuxtCookieConsentOptions): void {
-  const consent = useCookieConsent()
+  const { state } = useCookieConsent()
 
   useHead(() => {
     const scripts: NuxtCookieConsentOptionsScripts['scripts']['necessary'] = []
 
-    for (const key in consent.value) {
-      if (consent.value[key as keyof NuxtCookieConsentState]) {
+    for (const key in state.value) {
+      if (state.value[key as keyof NuxtCookieConsentState]) {
         scripts.push(
           ...(config.scripts?.[key as keyof NuxtCookieConsentState] || []),
         )

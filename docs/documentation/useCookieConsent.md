@@ -1,6 +1,6 @@
-# Consent state
+# useCookieConsent
 
-The consent state is a _composable_ that gives you an reactive way to interact with the state of the approved categories.
+This composable gives you an reactive way to interact with the state of the approved categories.
 
 This is useful for adjusting options or general behaviour based on weather or not a specific category has been approved.
 
@@ -19,14 +19,20 @@ This composable is autoloaded by Nuxt.
 </template>
 
 <script setup lang="ts">
-const consent = useCookieConsent()
+const { state } = useCookieConsent()
 
 // Using the composable in your script
 const allowedStatisticsAndMarketing = computed(() => {
-  return consent.value.statistic && consent.value.marketing
+  return state.value.statistic && state.value.marketing
 })
 </script>
 ```
+
+## Utils
+The composable exposes two utility functions called `show` and `renew`.
+These functions triggers the equilivant on the provider script exposed in on the `window` object.
+
+These functions triggers the consent modal. This is useful if users want's to change their preferences or you need for them to re-consider their choices to access a specific feature.
 
 ## Type declaration
 <<< @/../src/runtime/types/types.d.ts#consentState{typescript}

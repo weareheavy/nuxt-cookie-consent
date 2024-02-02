@@ -19,6 +19,8 @@ export default defineNuxtPlugin(() => {
   if (config.init) {
     // @ts-ignore
     const culture = config.culture || 'EN'
+    // @ts-ignore
+    const gcm: string | undefined = config.gcm
 
     useHead({
       script: [
@@ -26,7 +28,10 @@ export default defineNuxtPlugin(() => {
           id: 'CookieConsent',
           src: 'https://policy.app.cookieinformation.com/uc.js',
           type: 'text/javascript',
+          tagPriority: 5,
           'data-culture': culture,
+          'data-gcm-version':
+            typeof gcm === 'string' && gcm.length > 0 ? gcm : undefined,
         },
       ],
     })
@@ -42,7 +47,7 @@ export default defineNuxtPlugin(() => {
     },
   )
 
-  const state = useCookieConsent()
+  const { state } = useCookieConsent()
 
   if (cookie.value) {
     updateState(state, {

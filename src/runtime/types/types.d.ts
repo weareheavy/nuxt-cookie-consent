@@ -27,6 +27,12 @@ export interface NuxtCookieConsentState {
 }
 
 export type NuxtCookieConsentStateRef = Ref<NuxtCookieConsentState>
+
+export type NuxtCookieConsentUseCookieConsent = {
+  state: NuxtCookieConsentStateRef
+  show: () => void
+  renew: () => void
+}
 // #endregion consentState
 
 /**
@@ -105,6 +111,7 @@ export type NuxtCookieConsentCookieInformationCulture =
 
 type Head = import('@unhead/schema').Head
 
+// #region moduleGeneralOptionsScripts
 export type NuxtCookieConsentOptionsScripts = {
   scripts: {
     necessary?: Head['script']
@@ -114,6 +121,7 @@ export type NuxtCookieConsentOptionsScripts = {
     unclassified?: Head['script']
   }
 }
+// #endregion moduleGeneralOptionsScripts
 
 // #region moduleGeneralOptions
 export type NuxtCookieConsentOptionsLoadStrategy = {
@@ -122,12 +130,26 @@ export type NuxtCookieConsentOptionsLoadStrategy = {
 }
 // #endregion moduleGeneralOptions
 
+// #region moduleGeneralOptionsCookieInformation
+export type NuxtCookieConsentOptionsProviderCookieInformation = {
+  provider: 'cookieinformation'
+  culture?: NuxtCookieConsentCookieInformationCulture
+  gcm?: string
+}
+// #endregion moduleGeneralOptionsCookieInformation
+
+// #region moduleGeneralOptionsCookieBot
+export type NuxtCookieConsentOptionsProviderCookieBot = {
+  provider: 'cookiebot'
+  cbid: string
+  consentMode?: boolean
+  consentModeDefaults?: boolean
+}
+// #endregion moduleGeneralOptionsCookieBot
+
 export type NuxtCookieConsentOptionsProvider =
-  | { provider: 'cookiebot'; cbid: string }
-  | {
-      provider: 'cookieinformation'
-      culture: NuxtCookieConsentCookieInformationCulture
-    }
+  | NuxtCookieConsentOptionsProviderCookieBot
+  | NuxtCookieConsentOptionsProviderCookieInformation
 
 export type NuxtCookieConsentOptions = NuxtCookieConsentOptionsProvider &
   NuxtCookieConsentOptionsScripts &

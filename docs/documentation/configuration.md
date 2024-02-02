@@ -45,3 +45,6 @@ If you want to know more about the different categories, and get more in depth u
 | necessary    | These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site.                                                                                                          |
 | statistic    | Also known as “performance cookies,” these cookies collect information about how you use a website, like which pages you visited and which links you clicked on.                                                                     |
 | unclassified | These are not an official type of cookies. But many providees offers a state for unclassified cookes. Generally this shouldn't be used.                                                                                              |
+
+## Type Declaration
+<<< @/../src/runtime/types/types.d.ts#moduleGeneralOptionsScripts{typescript}

@@ -2,15 +2,15 @@
 
 This module aims to support as many providers as possible, and currently have implementations for these:
 
-|  Provider         | Alias               |  Website                                               |
-| ----------------- | ------------------- | ------------------------------------------------------ |
-| CookieBot         | `cookiebot`         | [https://cookiebot.com](https://cookiebot.com)         |
-| CookieInformation | `cookieinformation` | [https://cookieinformation.com](https://cookiebot.com) |
+|  Provider                                                       | Alias               |  Website                                               |
+| --------------------------------------------------------------- | ------------------- | ------------------------------------------------------ |
+| [CookieBot](/documentation/providers/cookiebot)                 | `cookiebot`         | [https://cookiebot.com](https://cookiebot.com)         |
+| [CookieInformation](/documentation/providers/cookieinformation) | `cookieinformation` | [https://cookieinformation.com](https://cookiebot.com) |
 
 <div class="pt-4"></div>
 
 Each provider might have unique options that you need to configure in your `nuxt.config.ts` file.
-Please refer to the [Configure your provider](/documentation#configure-your-provider) section to see specific options for each provider.
+Please refer to the specific page for each provider.
 
 <div class="pt-8"></div>
 

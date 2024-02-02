@@ -1,10 +1,16 @@
 interface Window {
   CookieInformation: CookieInformation
+  CookieConsent: WindowCookieConsentInteractions
   Cookiebot: CookieBot
 }
 
 interface CookieInformation {
   getConsentGivenFor: (category: string) => boolean
+}
+
+interface WindowCookieConsentInteractions {
+  renew: () => void
+  show: () => void
 }
 
 /**

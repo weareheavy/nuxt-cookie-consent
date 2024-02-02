@@ -7,7 +7,10 @@ import {
 } from '@nuxt/kit'
 import { defu } from 'defu'
 import type { NuxtModule } from '@nuxt/schema'
-import type { NuxtCookieConsentOptions } from './runtime/types/types'
+import type {
+  NuxtCookieConsentOptions,
+  NuxtCookieConsentOptionsProviderCookieBot,
+} from './runtime/types/types'
 
 export const nuxtConsentProviders = ['cookieinformation', 'cookiebot']
 
@@ -20,7 +23,6 @@ const module: NuxtModule<NuxtCookieConsentOptions> =
     // Default configuration options of the Nuxt module
     defaults: {
       provider: 'cookieinformation',
-      culture: 'EN',
       init: true,
       dev: false,
       scripts: {
@@ -34,12 +36,28 @@ const module: NuxtModule<NuxtCookieConsentOptions> =
     setup(options, nuxt) {
       const resolver = createResolver(import.meta.url)
 
-      nuxt.options.runtimeConfig.public.cookieConsent = defu<
-        NuxtCookieConsentOptions,
-        [NuxtCookieConsentOptions]
-      >(nuxt.options.runtimeConfig.public.cookieConsent || {}, options)
+      let config = defu<NuxtCookieConsentOptions, [NuxtCookieConsentOptions]>(
+        nuxt.options.runtimeConfig.public.cookieConsent || {},
+        options,
+      )
 
-      const provider = nuxt.options.runtimeConfig.public.cookieConsent.provider
+      const provider = config.provider
+
+      if (provider === 'cookiebot') {
+        config = defu(config, {
+          consentMode: true,
+          consentModeDefaults: true,
+        })
+      } else if (provider === 'cookieinformation') {
+        config = defu(
+          {
+            culture: 'EN',
+          },
+          config,
+        )
+      }
+
+      nuxt.options.runtimeConfig.public.cookieConsent = config
 
       if (!nuxtConsentProviders.includes(provider)) {
         throw new Error(

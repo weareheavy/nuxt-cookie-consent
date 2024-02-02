@@ -17,12 +17,28 @@ export default defineConfig({
         items: [
           { text: 'Getting started', link: '/documentation' },
           { text: 'Configuration', link: '/documentation/configuration' },
-          { text: 'Providers', link: '/documentation/providers' },
           {
             text: 'Usage',
             items: [
-              { text: 'Consent State', link: '/documentation/consent-state' },
+              {
+                text: 'useCookieConsent',
+                link: '/documentation/useCookieConsent',
+              },
               { text: 'Consent Policy', link: '/documentation/consent-policy' },
+            ],
+          },
+          {
+            text: 'Providers',
+            link: '/documentation/providers',
+            items: [
+              {
+                text: 'CookieBot',
+                link: '/documentation/providers/cookiebot',
+              },
+              {
+                text: 'CookieInformation',
+                link: '/documentation/providers/cookieinformation',
+              },
             ],
           },
         ],

@@ -1,9 +1,8 @@
-# Nuxt Cookie Consent
+# Nuxt Cookie Consent 
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![bundle][bundle-src]][bundle-href]
-<!-- [![Codecov][codecov-src]][codecov-href] -->
 [![License][license-src]][license-href]
 
 This module aims to provide a simple unified way to interact with cookie providers and implement script loading strategies with Nuxt 3.
@@ -11,6 +10,8 @@ This module aims to provide a simple unified way to interact with cookie provide
 - Simple configuration
 - Reactive state of consents given
 - Plugable and composable API
+
+[📖 Read full documentation](https://nuxt-cookie-consent.packages.weareheavy.com)
 
 ## Providers
 This module currently supports the following providers

@@ -1,6 +1,18 @@
 # Getting started
 
-This Nuxt module provides an easy and convenient way to interact with cookie consent platoforms, using a unified simple interface.
+This Nuxt module offers a straightforward and convenient way to engage with cookie consent platforms, utilizing a unified and simple interface.
+
+Its goal is to serve as a simple and accessible foundation for integrating cookie policies into your Nuxt application.
+
+
+## Why this package?
+Why not leverage Google Tag Manager to conditionally load scripts based on consent?
+
+That's a valid question! One of the primary reasons was the slow loading of scripts 🐌. For returning users, we had to first serve the site, then load Google Tag Manager, and finally load the Cookie Consent scripts. Google Tag Manager then listens to init events on consent and loads the scripts.
+
+This chain of events needs to occur before you can enable analytics or showcase YouTube videos. Moreover, we faced challenges in maintaining a reactive state when a user's consent changes. For example, should we render the YouTube player when a user accepts statistics? Or allow Algolia to collect insights when consent is given?
+
+With this module, we aim to address these issues while providing a small and easy-to-use interface for interaction.
 
 ## Installation
 Install the `@weareheavy/nuxt-cookie-consent` module using your favorite package manager.

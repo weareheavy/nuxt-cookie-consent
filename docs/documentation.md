@@ -14,6 +14,12 @@ This chain of events needs to occur before you can enable analytics or showcase 
 
 With this module, we aim to address these issues while providing a small and easy-to-use interface for interaction.
 
+## SSR
+So, what about SSR?
+This module parses the cookies on the server and populates the consent state and loads your scripts directly on the ssr response for faster loading.
+
+This means that your scripts are loaded initially by the client if the consent is given.
+
 ## Installation
 Install the `@weareheavy/nuxt-cookie-consent` module using your favorite package manager.
 

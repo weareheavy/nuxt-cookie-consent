@@ -9,7 +9,7 @@ import { defu } from 'defu'
 import type { NuxtModule } from '@nuxt/schema'
 import type {
   NuxtCookieConsentOptions,
-  NuxtCookieConsentOptionsProviderCookieBot,
+  NuxtCookieConsentOptionsProviderCookieInformation,
 } from './runtime/types/types'
 
 export const nuxtConsentProviders = ['cookieinformation', 'cookiebot']
@@ -49,12 +49,12 @@ const module: NuxtModule<NuxtCookieConsentOptions> =
           consentModeDefaults: true,
         })
       } else if (provider === 'cookieinformation') {
-        config = defu(
-          {
-            culture: 'EN',
-          },
-          config,
-        )
+        config = defu<
+          NuxtCookieConsentOptions,
+          [Pick<NuxtCookieConsentOptionsProviderCookieInformation, 'culture'>]
+        >(config, {
+          culture: 'EN',
+        })
       }
 
       nuxt.options.runtimeConfig.public.cookieConsent = config
@@ -70,7 +70,7 @@ const module: NuxtModule<NuxtCookieConsentOptions> =
       addComponent({
         name: 'nuxt-cookie-consent-policy',
         filePath: resolver.resolve(
-          `./runtime/components/ConsentPolicy,${provider}.client`,
+          `./runtime/components/ConsentPolicy.${provider}.client`,
         ),
         mode: 'client',
       })

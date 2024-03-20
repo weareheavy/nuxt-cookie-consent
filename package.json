@@ -1,6 +1,6 @@
 {
   "name": "@weareheavy/nuxt-cookie-consent",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Nuxt module for integrating with cookie consent providers with ease",
   "keywords": [
     "nuxt",

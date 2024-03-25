@@ -69,7 +69,7 @@ export default defineNuxtPlugin(() => {
     })
   }
 
-  if (process.client) {
+  if (import.meta.client) {
     window.addEventListener('CookieInformationConsentGiven', () => {
       if (!window?.CookieInformation?.getConsentGivenFor) {
         return

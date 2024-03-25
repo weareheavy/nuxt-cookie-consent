@@ -21,13 +21,13 @@ export function useCookieConsent(): NuxtCookieConsentUseCookieConsent {
 }
 
 export function cookieConsentRenew(): void {
-  if (process.client) {
+  if (import.meta.client) {
     window?.CookieConsent?.renew?.()
   }
 }
 
 export function cookieConsentShow(): void {
-  if (process.client) {
+  if (import.meta.client) {
     window?.CookieConsent?.show?.()
   }
 }

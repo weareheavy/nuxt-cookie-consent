@@ -76,7 +76,7 @@ export default defineNuxtPlugin(() => {
     })
   }
 
-  if (process.client) {
+  if (import.meta.client) {
     window.addEventListener('CookiebotOnAccept', () => {
       if (!window?.Cookiebot?.consent) {
         return

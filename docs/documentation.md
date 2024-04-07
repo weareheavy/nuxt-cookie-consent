@@ -22,22 +22,41 @@ This means that your scripts are loaded initially by the client if the consent i
 
 ## Installation
 
-### Install using nuxi module add
+You have two ways of installing the module – see options below.
+
+### 1.0) Install using nuxi module add
+
+Install using nuxi module add, wich automatically adds it tot the modules option in `nuxt.config`.
+
 ::: code-group
 ```bash [npm]
-npx nuxi@latest module add nuxt-cookie-consent
+npx nuxi@latest module add @weareheavy/nuxt-cookie-consent
 ```
 
 ```bash [bun]
-bunx nuxi@latest module add nuxt-cookie-consent
+bunx nuxi@latest module add @weareheavy/nuxt-cookie-consent
 ```
 :::
 
-### Install manually
+### 2.1) Install manually
 
 Install the `@weareheavy/nuxt-cookie-consent` module using your favorite package manager.
 
-## Initialize module
+::: code-group
+```bash [npm]
+npm install @weareheavy/nuxt-cookie-consent
+```
+
+```bash [yarn]
+yarn add @weareheavy/nuxt-cookie-consent
+```
+
+```bash [bun]
+bun install @weareheavy/nuxt-cookie-consent
+```
+:::
+
+### 2.2) Initialize module
 Add the module to your `nuxt.config.ts` file.
 
 ```typescript

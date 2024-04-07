@@ -2,7 +2,8 @@ export default defineNuxtConfig({
   modules: ['../src/module'],
   devtools: { enabled: true },
   cookieConsent: {
-    provider: 'cookieinformation',
+    provider: 'cookiescript',
+    id: '00000000000000000000000000000000',
     // cbid: '00000000-0000-0000-0000-000000000000',
     dev: true,
     scripts: {

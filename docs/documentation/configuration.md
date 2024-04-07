@@ -2,14 +2,14 @@
 
 To start using the module you have to have [configured a provider](/documentation#configure-your-provider).
 
-Currently this module supports [Cookieinformation](https://cookieinformation.com) and [CookieBot](https://cookiebot.com). An account for the respective service is required.
+Currently this module supports [Cookieinformation](https://cookieinformation.com), [CookieBot](https://cookiebot.com) and [CookieScript](https://cookiescript.com). An account for the respective service is required.
 
 ## General configuration
 
-| Property |  Type      | Default |  Description                           |
-| -------- | ---------- | ------- | -------------------------------------- |
-| init     | `Boolean`  |  `true` | Initialize the provider script on load |
-|  dev     |  `Boolean` | `false` | Run code when in development mode      |
+| Property |  Type     | Default |  Description                           |
+| -------- | --------- | ------- | -------------------------------------- |
+| dev      | `Boolean` | `false` | Run code when in development mode      |
+| init     | `Boolean` | `true`  | Initialize the provider script on load |
 
 ## Type declaration
 <<< @/../src/runtime/types/types.d.ts#moduleGeneralOptions{typescript}

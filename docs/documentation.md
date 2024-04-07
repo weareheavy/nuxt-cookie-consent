@@ -59,4 +59,14 @@ export default defineNuxtConfig({
     }
 })
 ```
+
+```typescript [CookieScript]
+export default defineNuxtConfig({
+    modules: ['@weareheavy/nuxt-cookie-consent']
+    cookieConsent: {
+        provider: 'cookiescript',
+        id: '00000000000000000000000000000000' // Replace with you "id" from CookieScript
+    }
+})
+```
 :::

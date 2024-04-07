@@ -12,7 +12,11 @@ import type {
   NuxtCookieConsentOptionsProviderCookieInformation,
 } from './runtime/types/types'
 
-export const nuxtConsentProviders = ['cookieinformation', 'cookiebot']
+export const nuxtConsentProviders = [
+  'cookieinformation',
+  'cookiebot',
+  'cookiescript',
+]
 
 const module: NuxtModule<NuxtCookieConsentOptions> =
   defineNuxtModule<NuxtCookieConsentOptions>({

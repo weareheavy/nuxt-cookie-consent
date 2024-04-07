@@ -2,10 +2,11 @@
 
 This module aims to support as many providers as possible, and currently have implementations for these:
 
-|  Provider                                                       | Alias               |  Website                                               |
-| --------------------------------------------------------------- | ------------------- | ------------------------------------------------------ |
-| [CookieBot](/documentation/providers/cookiebot)                 | `cookiebot`         | [https://cookiebot.com](https://cookiebot.com)         |
-| [CookieInformation](/documentation/providers/cookieinformation) | `cookieinformation` | [https://cookieinformation.com](https://cookiebot.com) |
+|  Provider                                                       | Alias               |  Website                                                       |
+| --------------------------------------------------------------- | ------------------- | -------------------------------------------------------------- |
+| [CookieBot](/documentation/providers/cookiebot)                 | `cookiebot`         | [https://cookiebot.com](https://cookiebot.com)                 |
+| [CookieInformation](/documentation/providers/cookieinformation) | `cookieinformation` | [https://cookieinformation.com](https://cookieinformation.com) |
+| [CookieScript](/documentation/providers/cookiescript)           | `cookiescript`      | [https://cookiescript.com](https://cookiescript.com)           |
 
 <div class="pt-4"></div>
 

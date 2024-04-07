@@ -22,12 +22,20 @@ export function useCookieConsent(): NuxtCookieConsentUseCookieConsent {
 
 export function cookieConsentRenew(): void {
   if (import.meta.client) {
-    window?.CookieConsent?.renew?.()
+    if (typeof window?.CookieScript?.instance?.show === 'function') {
+      window?.CookieScript?.instance?.show?.()
+    } else {
+      window?.CookieConsent?.renew?.()
+    }
   }
 }
 
 export function cookieConsentShow(): void {
   if (import.meta.client) {
-    window?.CookieConsent?.show?.()
+    if (typeof window?.CookieScript?.instance?.show === 'function') {
+      window?.CookieScript?.instance?.show?.()
+    } else {
+      window?.CookieConsent?.show?.()
+    }
   }
 }

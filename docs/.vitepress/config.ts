@@ -39,6 +39,10 @@ export default defineConfig({
                 text: 'CookieInformation',
                 link: '/documentation/providers/cookieinformation',
               },
+              {
+                text: 'CookieScript',
+                link: '/documentation/providers/cookiescript',
+              },
             ],
           },
         ],

@@ -21,10 +21,21 @@ This module parses the cookies on the server and populates the consent state and
 This means that your scripts are loaded initially by the client if the consent is given.
 
 ## Installation
-Install the `@weareheavy/nuxt-cookie-consent` module using your favorite package manager.
-```bash
+
+### Install using nuxi module add
+::: code-group
+```bash [npm]
 npx nuxi@latest module add nuxt-cookie-consent
 ```
+
+```bash [bun]
+bunx nuxi@latest module add nuxt-cookie-consent
+```
+:::
+
+### Install manually
+
+Install the `@weareheavy/nuxt-cookie-consent` module using your favorite package manager.
 
 ## Initialize module
 Add the module to your `nuxt.config.ts` file.

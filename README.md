@@ -22,6 +22,7 @@ This module currently supports the following providers
 
 - CookieBot
 - CookieInformation
+- CookieScript
 
 ## Documentation
 

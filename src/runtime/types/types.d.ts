@@ -17,6 +17,20 @@ interface CookieInformationPayload {
   user_agent: string
 }
 
+interface CookieScriptPayload {
+  googleconsentmap: {
+    ad_storage: 'targeting'
+    analytics_storage: 'performance'
+    ad_personalization: 'targeting'
+    ad_user_data: 'targeting'
+    functionality_storage: 'functionality'
+    personalization_storage: 'functionality'
+    security_storage: 'functionality'
+  }
+  action?: 'accept' | 'reject'
+  categories?: string[]
+}
+
 // #region consentState
 export interface NuxtCookieConsentState {
   necessary: boolean
@@ -147,9 +161,17 @@ export type NuxtCookieConsentOptionsProviderCookieBot = {
 }
 // #endregion moduleGeneralOptionsCookieBot
 
+// #region moduleGeneralOptionsCookieScript
+export type NuxtCookieConsentOptionsCookieScript = {
+  provider: 'cookiescript'
+  id: string
+}
+// #endregion moduleGeneralOptionsCookieScript
+
 export type NuxtCookieConsentOptionsProvider =
   | NuxtCookieConsentOptionsProviderCookieBot
   | NuxtCookieConsentOptionsProviderCookieInformation
+  | NuxtCookieConsentOptionsCookieScript
 
 export type NuxtCookieConsentOptions = NuxtCookieConsentOptionsProvider &
   NuxtCookieConsentOptionsScripts &

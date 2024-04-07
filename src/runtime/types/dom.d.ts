@@ -2,6 +2,20 @@ interface Window {
   CookieInformation: CookieInformation
   CookieConsent: WindowCookieConsentInteractions
   Cookiebot: CookieBot
+  CookieScript: CookieScript
+}
+
+// @see https://help.cookie-script.com/en/javascript-code-documentation/custom-functions
+interface CookieScript {
+  instance: {
+    show: () => void
+    hide: () => void
+    currentState: () => void
+    categories: () => void
+    acceptAllAction: () => void
+    rejectAllAction: () => void
+    acceptAction: () => void
+  }
 }
 
 interface CookieInformation {

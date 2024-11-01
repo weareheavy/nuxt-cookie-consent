@@ -1,6 +1,6 @@
 # CookieInformation
 
-Websie: [cookieinformation.com](https://cookieinformation.com)
+Website: [cookieinformation.com](https://cookieinformation.com)
 
 
 ## Configuration
